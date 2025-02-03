@@ -1,0 +1,36 @@
+# === Archivos de Compilación ===
+target/
+*.class
+
+# === Configuración de Maven ===
+
+Patterns/
+.mvn/
+!**/src/main/**/mvnw
+!**/src/main/**/mvnw.cmd
+
+# === Configuración de IDE (VS Code) ===
+.vscode/
+
+# === Archivos de logs ===
+*.log
+*.tmp
+
+# === Configuración y credenciales ===
+*.env
+*.properties
+application.yml
+application.properties
+
+# === Dependencias descargadas ===
+*.jar
+*.war
+*.ear
+
+# === Archivos de sistema ===
+.DS_Store
+Thumbs.db
+
+# === Archivos de control de versiones innecesarios ===
+*.swp
+*.swo
