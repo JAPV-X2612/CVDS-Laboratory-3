@@ -168,4 +168,37 @@ class libraryTest {
         assertNotNull(loan);
         assertEquals(LoanStatus.RETURNED, loan.getStatus()); // The status should change to RETURNED
     }
+
+    //------------------- returnLoan ------------------- 
+    @Test
+    /*
+    * Tests the book return functionality. 
+    * Adds a book and a user, performs a loan, 
+    * and verifies that the loan status is "RETURNED" 
+    * and the return date is not null.
+    */
+    void ShouldReturnLoanedBook(){
+        library.addBook(coquito);
+        library.addUser(mayerlly);
+        Loan loan = library.loadABook(mayerlly.getID(), coquito.getIsbn());
+        Load returnedLoad = library.returnLoan(loan); 
+        assertEquals(LoanStatus.RETURNED, returnedLoan.getStatus());
+        assertNotNull(returnedLoan.getReturnDate());
+    }
+
+    @Test
+    /*
+    * Tests that a nonexistent loan cannot be returned.
+    * Creates a loan with an active status and attempts to return it.
+    * Verifies that the returned loan is null.
+    */
+    public void shouldNotReturnNonexistentLoan() {
+        Loan loan = new Loan();
+        loan.setBook(Clean_Code);
+        loan.setUser(mayerllyS);
+        loan.setLoanDate(LocalDateTime.now());
+        loan.setStatus(LoanStatus.ACTIVE);
+        Loan returnedLoan = library.returnLoan(loan);
+        assertNull(returnedLoan);
+    }
 }
