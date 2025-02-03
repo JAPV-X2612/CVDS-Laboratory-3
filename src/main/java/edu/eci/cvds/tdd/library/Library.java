@@ -2,8 +2,10 @@ package edu.eci.cvds.tdd.library;
 
 import edu.eci.cvds.tdd.library.book.Book;
 import edu.eci.cvds.tdd.library.loan.Loan;
+import edu.eci.cvds.tdd.library.loan.LoanStatus;
 import edu.eci.cvds.tdd.library.user.User;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -59,8 +61,33 @@ public class Library {
      * @return The new created loan.
      */
     public Loan loanABook(String userId, String isbn) {
-        //TODO Implement the login of loan a book to a user based on the UserId and the isbn.
-        return null;
+        // Check if the user exists
+        User user = findUserById(userId); // Implement this logic to find a user by ID
+        if (user == null) {
+            throw new IllegalArgumentException("User does not exist");
+        }
+
+        // Check if the book exists and is available
+        Book book = findBookByIsbn(isbn); // Implement this logic to find a book by ISBN
+        if (book == null || books.get(book) <= 0) {
+            throw new IllegalArgumentException("Book not available");
+        }
+
+        // Check if the user already has the book on loan
+        for (Loan loan : loans) {
+            if (loan.getUserId().equals(userId) && loan.getBookIsbn().equals(isbn) && loan.getStatus() == LoanStatus.ACTIVE) {
+                throw new IllegalArgumentException("User already has this book on loan");
+            }
+        }
+
+        // Create the loan
+        Loan newLoan = new Loan(userId, isbn, LoanStatus.ACTIVE);
+        loans.add(newLoan);
+
+        // Decrease the available amount of the book
+        books.put(book, books.get(book) - 1);
+
+        return newLoan;
     }
 
     /**
@@ -73,7 +100,6 @@ public class Library {
      * @return the loan with the RETURNED status.
      */
     public Loan returnLoan(Loan loan) {
-        //TODO Implement the login of loan a book to a user based on the UserId and the isbn.
         return null;
     }
 
@@ -81,7 +107,41 @@ public class Library {
         return users.add(user);
     }
 
+    @SuppressWarnings("rawtypes")
     public Map getBooks(){
         return books;
     }
+
+    // New Methods by Jesus
+
+    /**
+     * Finds a user by their userId.
+     *
+     * @param userId the id of the user to find.
+     * @return the user if found, null otherwise.
+     */
+    public User findUserById(String userId) {
+        for (User user : users) {
+            if (user.getId().equals(userId)) {
+                return user;
+            }
+        }
+        return null; // Return null if the user is not found
+    }
+
+    /**
+     * Finds a book by its ISBN.
+     *
+     * @param isbn the ISBN of the book to find.
+     * @return the book if found, null otherwise.
+     */
+    public Book findBookByIsbn(String isbn) {
+        for (Book book : books.keySet()) {
+            if (book.getIsbn().equals(isbn)) {
+                return book;
+            }
+        }
+        return null; // Return null if the book is not found
+    }
+
 }
