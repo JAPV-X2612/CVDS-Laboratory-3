@@ -35,8 +35,14 @@ public class Library {
      * @return true if the book was stored false otherwise.
      */
     public boolean addBook(Book book) {
-        //TODO Implement the logic to add a new book into the map.
-        return false;
+        if (books.containsKey(book)) {
+        // If the book exists in the map, increment the count by 1.
+        books.put(book, books.get(book) + 1);
+    } else {
+        // If the book is not in the map, add it with a count of 1.
+        books.put(book, 1);
+    }
+    return true;
     }
 
     /**
@@ -75,4 +81,7 @@ public class Library {
         return users.add(user);
     }
 
+    public Map getBooks(){
+        return books;
+    }
 }
