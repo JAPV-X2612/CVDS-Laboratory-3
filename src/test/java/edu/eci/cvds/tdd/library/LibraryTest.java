@@ -10,8 +10,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-import java.util.List;
+//import java.util.List;
 import java.util.Map;
+import java.time.LocalDateTime;
 
 class libraryTest {
 
@@ -112,16 +113,13 @@ class libraryTest {
      */
     @Test
     public void testLoanBookNotAvailable() {
-        // Simulate that the book is not available
-        when(book.getIsbn()).thenReturn("12345");
-        when(user.getId()).thenReturn("user123");
-
-        // No books available
         library.addUser(user);
 
-        Loan loan = library.loanABook("user123", "12345");
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            library.loanABook("user123", "12345");
+        });
 
-        assertNull(loan); // If no books are available, the loan should be null.
+        assertEquals("Book not available", exception.getMessage());
     }
 
     /**
@@ -178,10 +176,14 @@ class libraryTest {
     * and the return date is not null.
     */
     void ShouldReturnLoanedBook(){
+        Book coquito = new Book("Coquito", "Author", "123");
+        User mayerlly = new User("mayerlly", "3425");
+        mayerlly.setName("mayerlly");
         library.addBook(coquito);
         library.addUser(mayerlly);
-        Loan loan = library.loadABook(mayerlly.getID(), coquito.getIsbn());
-        Load returnedLoad = library.returnLoan(loan); 
+        Loan loan = library.loanABook(mayerlly.getId(), coquito.getIsbn());
+        Loan returnedLoan = library.returnLoan(loan);
+    
         assertEquals(LoanStatus.RETURNED, returnedLoan.getStatus());
         assertNotNull(returnedLoan.getReturnDate());
     }
@@ -193,11 +195,14 @@ class libraryTest {
     * Verifies that the returned loan is null.
     */
     public void shouldNotReturnNonexistentLoan() {
+        Book cleanCode = new Book("Clean Code", "Robert C. Martin", "9780132350884");
+        User mayerllyS = new User("mayerllyS", "1018");
         Loan loan = new Loan();
-        loan.setBook(Clean_Code);
+        loan.setBook(cleanCode);
         loan.setUser(mayerllyS);
         loan.setLoanDate(LocalDateTime.now());
         loan.setStatus(LoanStatus.ACTIVE);
+   
         Loan returnedLoan = library.returnLoan(loan);
         assertNull(returnedLoan);
     }
