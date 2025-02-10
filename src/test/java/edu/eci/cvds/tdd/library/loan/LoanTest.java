@@ -7,8 +7,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.LocalDateTime;
 
-/*
+/**
  * Unit tests for the Loan class
+ *
+ * @author: Mayerlly Suárez, Jesús Pinzón & José Castillo
+ * @version 1.1 (2024/02/05)
  */
 public class LoanTest {
 

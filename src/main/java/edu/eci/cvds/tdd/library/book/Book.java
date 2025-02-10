@@ -1,6 +1,9 @@
 package edu.eci.cvds.tdd.library.book;
 /**
  * Represents a book with a title, author, and ISBN.
+ * 
+ * @author: Mayerlly Suárez, Jesús Pinzón & José Castillo
+ * @version 1.1 (2024/02/05)
  */
 public class Book {
     private final String tittle;
@@ -22,7 +25,6 @@ public class Book {
 
     /**
      * Returns the title of the book.
-     * 
      * @return The title of the book.
      */
     public String getTittle() {
@@ -31,7 +33,6 @@ public class Book {
 
     /**
      * Returns the author of the book.
-     * 
      * @return The author of the book.
      */
     public String getAuthor() {
@@ -39,7 +40,6 @@ public class Book {
     }
     /**
      * Returns the ISBN of the book.
-     * 
      * @return The ISBN of the book.
      */
     public String getIsbn() {
@@ -47,8 +47,7 @@ public class Book {
     }
 
     /**
-     * Compares this book to another object. Two books are considered equal
-     * if they have the same ISBN.
+     * Compares this book to another object. Two books are considered equal if they have the same ISBN.
      * 
      * @param obj The object to compare this book with.
      * @return true if the books are the same (i.e., have the same ISBN), false otherwise.

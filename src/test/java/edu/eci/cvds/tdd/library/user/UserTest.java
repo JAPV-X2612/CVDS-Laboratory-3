@@ -5,6 +5,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Unit tests for the User class.
+ *
+ * @author: Mayerlly Suárez, Jesús Pinzón & José Castillo
+ * @version 1.1 (2024/02/05)
  */
 public class UserTest {
 

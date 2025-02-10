@@ -5,7 +5,6 @@ import edu.eci.cvds.tdd.library.loan.Loan;
 import edu.eci.cvds.tdd.library.loan.LoanStatus;
 import edu.eci.cvds.tdd.library.user.User;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,6 +13,9 @@ import java.util.Map;
 
 /**
  * Library responsible for manage the loans and the users.
+ * 
+ * @author: Mayerlly Suárez, Jesús Pinzón & José Castillo
+ * @version 1.5 (2024/02/09)
  */
 public class Library {
 
@@ -38,14 +40,9 @@ public class Library {
      * @return true if the book was stored false otherwise.
      */
     public boolean addBook(Book book) {
-        if (books.containsKey(book)) {
-        // If the book exists in the map, increment the count by 1.
-        books.put(book, books.get(book) + 1);
-    } else {
-        // If the book is not in the map, add it with a count of 1.
-        books.put(book, 1);
-    }
-    return true;
+        if (book == null) return false;
+        books.put(book, books.getOrDefault(book, 0) + 1);
+        return true;
     }
 
     /**
@@ -62,32 +59,54 @@ public class Library {
      * @return The new created loan.
      */
     public Loan loanABook(String userId, String isbn) {
-        // Check if the user exists
-        User user = findUserById(userId); // Implement this logic to find a user by ID
+        // Find the user
+        User user = users.stream()
+                .filter(u -> u.getId().equals(userId))
+                .findFirst()
+                .orElse(null);
+                
         if (user == null) {
-            throw new IllegalArgumentException("User does not exist");
+            return null;
         }
 
-        // Check if the book exists and is available
-        Book book = findBookByIsbn(isbn); // Implement this logic to find a book by ISBN
-        if (book == null || books.get(book) <= 0) {
-            throw new IllegalArgumentException("Book not available");
+        // Find the book
+        Book bookToLoan = books.keySet().stream()
+                .filter(b -> b.getIsbn().equals(isbn))
+                .findFirst()
+                .orElse(null);
+
+        if (bookToLoan == null) {
+            return null;
         }
 
-        // Check if the user already has the book on loan
-        for (Loan loan : loans) {
-            if (loan.getUser().getId().equals(userId) && loan.getBook().getIsbn().equals(isbn) && loan.getStatus() == LoanStatus.ACTIVE) {
-                throw new IllegalArgumentException("User already has this book on loan");
-            }
+        // Check if book is available
+        Integer availableCopies = books.get(bookToLoan);
+        if (availableCopies == null || availableCopies <= 0) {
+            return null;
         }
 
-        // Create the loan
-        Loan newLoan = createLoan(user, book);
+        // Check if user already has an active loan for this book
+        boolean hasActiveLoan = loans.stream()
+                .anyMatch(l -> l.getUser().getId().equals(userId) 
+                        && l.getBook().getIsbn().equals(isbn)
+                        && l.getStatus() == LoanStatus.ACTIVE);
+                        
+        if (hasActiveLoan) {
+            return null;
+        }
 
-        // Decrease the available amount of the book
-        books.put(book, books.get(book) - 1);
+        // Create new loan
+        Loan loan = new Loan();
+        loan.setBook(bookToLoan);
+        loan.setUser(user);
+        loan.setLoanDate(LocalDateTime.now());
+        loan.setStatus(LoanStatus.ACTIVE);
 
-        return newLoan;
+        // Update book count and add loan
+        books.put(bookToLoan, availableCopies - 1);
+        loans.add(loan);
+
+        return loan;
     }
 
     /**
@@ -95,7 +114,7 @@ public class Library {
      * in the loan list should be {@link edu.eci.cvds.tdd.library.loan.LoanStatus#RETURNED} and the loan return
      * date should be the current date, validate that the loan exist.
      *
-     * @param loan loan to return.
+     * @param loan Loan to return.
      *
      * @return the loan with the RETURNED status.
      */
@@ -111,56 +130,14 @@ public class Library {
         return null;
     }
 
+    /**
+     * Adds a new user to the library system.
+     * This method stores the provided {@link edu.eci.cvds.tdd.library.user.User} in the users list.
+     * 
+     * @param user The user to be added to the system.
+     * @return true if the user was successfully added, false otherwise.
+     */
     public boolean addUser(User user) {
         return users.add(user);
     }
-
-    @SuppressWarnings("rawtypes")
-    public Map getBooks(){
-        return books;
-    }
-
-    // New Methods by Mayerlly
-    private Loan createLoan(User user, Book book) {
-        Loan loan = new Loan();
-        loan.setUser(user);
-        loan.setBook(book); 
-        loan.setLoanDate(LocalDateTime.now()); 
-        loan.setStatus(LoanStatus.ACTIVE); 
-        loans.add(loan); 
-        return loan;
-    }
-
-    // New Methods by Jesus
-
-    /**
-     * Finds a user by their userId.
-     *
-     * @param userId the id of the user to find.
-     * @return the user if found, null otherwise.
-     */
-    public User findUserById(String userId) {
-        for (User user : users) {
-            if (user.getId().equals(userId)) {
-                return user;
-            }
-        }
-        return null; // Return null if the user is not found
-    }
-
-    /**
-     * Finds a book by its ISBN.
-     *
-     * @param isbn the ISBN of the book to find.
-     * @return the book if found, null otherwise.
-     */
-    public Book findBookByIsbn(String isbn) {
-        for (Book book : books.keySet()) {
-            if (book.getIsbn().equals(isbn)) {
-                return book;
-            }
-        }
-        return null; // Return null if the book is not found
-    }
-
 }

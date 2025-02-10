@@ -7,6 +7,9 @@ import java.time.LocalDateTime;
 
 /**
  * Represents a book loan in the library system.
+ * 
+ * @author: Mayerlly Suárez, Jesús Pinzón & José Castillo
+ * @version 1.1 (2024/02/09)
  */
 public class Loan {
     private Book book;
