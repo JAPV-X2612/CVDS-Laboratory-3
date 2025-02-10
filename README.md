@@ -52,14 +52,14 @@ Library Management System using TDD with JUnit 5. Built with Java 17 and Maven, 
   ![description](assets/book_class.png)
 
   Next, in the edu.eci.cvds.tdd.library.user package, create the following class:
-  ![description](assets/library_class.png)
+  ![description](assets/user_class.png) 
 
   In the edu.eci.cvds.tdd.library.loan package, create the Loan class and the LoanStatus enum:
   ![description](assets/loan_class.png)
   ![description](assets/loan_status_class.png)
 
   Finally, create the Library class in the edu.eci.cvds.tdd.library package:
-  ![description](assets/user_class.png)
+  ![description](assets/library_class.png)
 
   To verify the project structure, compile it using the package command.
   ![description](assets/library_package.png)
