@@ -6,6 +6,7 @@ import edu.eci.cvds.tdd.library.loan.LoanStatus;
 import edu.eci.cvds.tdd.library.user.User;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -75,14 +76,13 @@ public class Library {
 
         // Check if the user already has the book on loan
         for (Loan loan : loans) {
-            if (loan.getUserId().equals(userId) && loan.getBookIsbn().equals(isbn) && loan.getStatus() == LoanStatus.ACTIVE) {
+            if (loan.getUser().getId().equals(userId) && loan.getBook().getIsbn().equals(isbn) && loan.getStatus() == LoanStatus.ACTIVE) {
                 throw new IllegalArgumentException("User already has this book on loan");
             }
         }
 
         // Create the loan
-        Loan newLoan = new Loan(userId, isbn, LoanStatus.ACTIVE);
-        loans.add(newLoan);
+        Loan newLoan = createLoan(user, book);
 
         // Decrease the available amount of the book
         books.put(book, books.get(book) - 1);
@@ -100,6 +100,14 @@ public class Library {
      * @return the loan with the RETURNED status.
      */
     public Loan returnLoan(Loan loan) {
+        for (Loan l : loans) {
+            if (l.equals(loan)) {
+                books.put(l.getBook(), books.get(l.getBook()) + 1);
+                l.setStatus(LoanStatus.RETURNED);
+                l.setReturnDate(LocalDateTime.now());
+                return l;
+            }
+        }
         return null;
     }
 
@@ -110,6 +118,17 @@ public class Library {
     @SuppressWarnings("rawtypes")
     public Map getBooks(){
         return books;
+    }
+
+    // New Methods by Mayerlly
+    private Loan createLoan(User user, Book book) {
+        Loan loan = new Loan();
+        loan.setUser(user);
+        loan.setBook(book); 
+        loan.setLoanDate(LocalDateTime.now()); 
+        loan.setStatus(LoanStatus.ACTIVE); 
+        loans.add(loan); 
+        return loan;
     }
 
     // New Methods by Jesus
