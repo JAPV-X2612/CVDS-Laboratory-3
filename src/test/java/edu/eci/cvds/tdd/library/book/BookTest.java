@@ -3,10 +3,12 @@ package edu.eci.cvds.tdd.library.book;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-/*
- * Test class for the Book class that validates various methods
- * such as equality comparison, title retrieval, author handling, 
- * and ISBN validation.
+/**
+ * Test class for the Book class that validates various methods such as equality comparison,
+ * title retrieval, author handling and ISBN validation.
+ * 
+ * @author: Mayerlly Suárez, Jesús Pinzón & José Castillo
+ * @version 1.1 (2024/02/05)
  */
 public class BookTest {
 
