@@ -1,0 +1,20 @@
+edu.eci.cvds.tdd.library.Library#loanABook(Ljava/lang/String;Ljava/lang/String;)Ledu/eci/cvds/tdd/library/loan/Loan;
+false
+0e8063a3b07564ed7da38c14ae8ccae2
+edu.eci.cvds.tdd.library.loan.Loan#<init>()V
+edu.eci.cvds.tdd.library.loan.Loan#instance-init#
+java.time.LocalDateTime#now()Ljava/time/LocalDateTime;
+java.util.Optional#orElse(Ljava/lang/Object;)Ljava/lang/Object;
+==
+add java.util.List#add(Ljava/lang/Object;)Z
+anyMatch java.util.stream.Stream#anyMatch(Ljava/util/function/Predicate;)Z
+filter java.util.stream.Stream#filter(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
+findFirst java.util.stream.Stream#findFirst()Ljava/util/Optional;
+get java.util.Map#get(Ljava/lang/Object;)Ljava/lang/Object;
+keySet java.util.Map#keySet()Ljava/util/Set;
+put java.util.Map#put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+setBook edu.eci.cvds.tdd.library.loan.Loan#setBook(Ledu/eci/cvds/tdd/library/book/Book;)V
+setLoanDate edu.eci.cvds.tdd.library.loan.Loan#setLoanDate(Ljava/time/LocalDateTime;)V
+setStatus edu.eci.cvds.tdd.library.loan.Loan#setStatus(Ledu/eci/cvds/tdd/library/loan/LoanStatus;)V
+setUser edu.eci.cvds.tdd.library.loan.Loan#setUser(Ledu/eci/cvds/tdd/library/user/User;)V
+stream java.util.Collection#stream()Ljava/util/stream/Stream;

@@ -10,10 +10,25 @@
   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.release>17</maven.compiler.release>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.release>19</maven.compiler.release>
+    <maven.compiler.target>19</maven.compiler.target>
+    <maven.compiler.source>19</maven.compiler.source>
+
+    <!-- SonarQube Properties -->
+    <sonar.projectKey>library</sonar.projectKey>
+    <sonar.projectName>library</sonar.projectName>
+    <sonar.host.url>http://localhost:9000</sonar.host.url>
+    <sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+    <sonar.coverage.exclusions>src//configurators/*</sonar.coverage.exclusions>
+
+      <!-- SonarCloud Properties -->
+    <sonar.projectKey>JAPV-X2612:CVDS-Laboratory-3</sonar.projectKey>
+    <sonar.organization>japv-x2612</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    <sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+    <sonar.coverage.exclusions>src//configurators/*</sonar.coverage.exclusions>
   </properties>
+
   
   <dependencies>
     <dependency>
@@ -28,16 +43,11 @@
         <version>5.11.4</version>
         <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>org.mockito</groupId>
-      <artifactId>mockito-core</artifactId>
-      <version>4.5.1</version> <!-- Use the latest version -->
-      <scope>test</scope>
-    </dependency>
   </dependencies>
 
   <build>
     <plugins>
+
       <!-- JaCoCo Plugin -->
       <plugin>
         <groupId>org.jacoco</groupId>
@@ -83,6 +93,19 @@
           </execution>
         </executions>
       </plugin>
+
+      <plugin>
+          <groupId>org.sonarsource.scanner.maven</groupId>
+          <artifactId>sonar-maven-plugin</artifactId>
+          <version>4.0.0.4121</version>
+      </plugin>
+
+      <plugin>
+          <groupId>org.sonarsource.scanner.maven</groupId>
+          <artifactId>sonar-maven-plugin</artifactId>
+          <version>4.0.0.4121</version>
+      </plugin>
+
     </plugins>
   </build>
 </project>

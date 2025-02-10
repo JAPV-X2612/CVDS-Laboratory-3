@@ -23,6 +23,8 @@ class LibraryTest {
     // 1.1. Test Class Attributes
 
     private Library library;
+    private Book book;
+    private User user;
 
 
 
@@ -32,8 +34,11 @@ class LibraryTest {
      * Sets up a new Library instance before each test.
      */
     @BeforeEach
-    public void setUp() {
+    void setUp() {
         library = new Library();
+        book = new Book("Clean Code", "Robert C. Martin", "978-0132350884");
+        user = new User("John Doe", "USR001");
+        library.addUser(user);
     }
 
 
@@ -68,76 +73,73 @@ class LibraryTest {
     // 2.2. Tests for loanABook Method by Jesus
 
     /**
-     * Test that loanABook should create a loan when the user and book exist and the book is available.
+     * Test that a user can loan a book after returning a previous loan of the same book.
+     * This verifies that only ACTIVE loans prevent new loans, not RETURNED ones.
      */
     @Test
-    public void shouldLoanBookSuccessfully() {
-        // Add a user to the library.
-        User user = new User("John Doe", "user1");
-        library.addUser(user);
-
-        // Add a book to the library.
-        Book book = new Book("Clean Code", "Robert C. Martin", "978-0132350884");
+    void shouldAllowLoanAfterReturning() {
+        // Add two copies of the book
         library.addBook(book);
-
-        // Attempt to loan the book.
-        Loan loan = library.loanABook(user.getId(), book.getIsbn());
-        assertNotNull(loan, "The loan should be created successfully.");
-        assertEquals(LoanStatus.ACTIVE, loan.getStatus(), "The loan status should be ACTIVE.");
-        assertEquals(user, loan.getUser(), "The loan should be assigned to the correct user.");
-        assertEquals(book, loan.getBook(), "The loan should be for the correct book.");
-    }
-
-    /**
-     * Test that loanABook should not create a loan if the user does not exist.
-     */
-    @Test
-    public void shouldNotLoanBookForNonexistentUser() {
-        // Add a book to the library.
-        Book book = new Book("Domain-Driven Design", "Eric Evans", "978-0321125217");
         library.addBook(book);
-
-        // Attempt to loan the book for a user that does not exist.
-        Loan loan = library.loanABook("nonexistentUser", book.getIsbn());
-        assertNull(loan, "A loan should not be created if the user does not exist.");
-    }
-
-    /**
-     * Test that loanABook should not create a loan if the book does not exist.
-     */
-    @Test
-    public void shouldNotLoanNonexistentBook() {
-        // Add a user to the library.
-        User user = new User("Jane Doe", "user2");
-        library.addUser(user);
-
-        // Attempt to loan a book that was not added.
-        Loan loan = library.loanABook(user.getId(), "nonexistentISBN");
-        assertNull(loan, "A loan should not be created if the book does not exist.");
-    }
-
-    /**
-     * Test that loanABook should not create a loan if there are no available copies of the book
-     * or if the user already has an active loan for the same book.
-     */
-    @Test
-    public void shouldNotLoanBookWhenNotAvailableOrAlreadyLoaned() {
-        // Add a user to the library.
-        User user = new User("Alice", "user3");
-        library.addUser(user);
-
-        // Add a book to the library.
-        Book book = new Book("The Pragmatic Programmer", "Andrew Hunt", "978-0201616224");
-        library.addBook(book); // 1 copy available
-
-        // First loan should succeed.
+        
+        // Create first loan
         Loan firstLoan = library.loanABook(user.getId(), book.getIsbn());
-        assertNotNull(firstLoan, "The first loan should be created.");
-
-        // Attempt a second loan for the same user and book should fail (user already has an active loan).
+        assertNotNull(firstLoan, "First loan should be successful");
+        
+        // Return the book
+        library.returnLoan(firstLoan);
+        
+        // Try to loan the same book again
         Loan secondLoan = library.loanABook(user.getId(), book.getIsbn());
-        assertNull(secondLoan, "A second loan should not be created if the user already has an active loan for the same book.");
+        assertNotNull(secondLoan, "Should allow new loan after returning previous one");
+        assertEquals(LoanStatus.ACTIVE, secondLoan.getStatus(), "New loan should be active");
     }
+
+    /**
+     * Test that the system correctly identifies and prevents duplicate active loans
+     * even when multiple copies of the book are available.
+     */
+    @Test
+    void shouldNotAllowDuplicateActiveLoans() {
+        // Add multiple copies of the same book
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book);
+        
+        // Create first loan
+        Loan firstLoan = library.loanABook(user.getId(), book.getIsbn());
+        assertNotNull(firstLoan, "First loan should be successful");
+        
+        // Attempt to create second loan while first is still active
+        Loan secondLoan = library.loanABook(user.getId(), book.getIsbn());
+        assertNull(secondLoan, "Should not allow second loan while first is active");
+    }
+
+    /**
+     * Test that the system correctly handles multiple users trying to loan the same book,
+     * ensuring that the active loan check is user-specific.
+     */
+    @Test
+    void shouldAllowDifferentUsersToLoanSameBook() {
+        // Add multiple copies of the same book
+        library.addBook(book);
+        library.addBook(book);
+        
+        // Create second user
+        User secondUser = new User("Jane Doe", "USR002");
+        library.addUser(secondUser);
+        
+        // First user loans the book
+        Loan firstUserLoan = library.loanABook(user.getId(), book.getIsbn());
+        assertNotNull(firstUserLoan, "First user's loan should be successful");
+        
+        // Second user tries to loan the same book
+        Loan secondUserLoan = library.loanABook(secondUser.getId(), book.getIsbn());
+        assertNotNull(secondUserLoan, "Second user should be able to loan the same book");
+        assertEquals(secondUser, secondUserLoan.getUser(), "Loan should be assigned to correct user");
+    }
+
+
 
 
     

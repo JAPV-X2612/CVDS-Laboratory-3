@@ -1,0 +1,456 @@
+
+1.0JAPV-X2612:CVDS-Laboratory-3JavaFrontend"1739175794182*java2.B¡
+:
+5src/main/java/edu/eci/cvds/tdd/library/loan/Loan.java2
+
+package4
+"
+edu.eci.cvds.tdd.library.loan5
+'
+"edu.eci.cvds.tdd.library.loan.Loan7
+
+
+class8
+
+access9
+
+public10
+
+simple name11
+
+
+Loan12
+
+
+uses13
+-
+'edu.eci.cvds.tdd.library.loan.Loan.book15
+
+field16
+
+private17
+
+
+book18
+(
+"edu.eci.cvds.tdd.library.book.Book20
+
+unknown21
+
+is type22
+-
+'edu.eci.cvds.tdd.library.loan.Loan.user24
+
+
+user25
+(
+"edu.eci.cvds.tdd.library.user.User27
+1
++edu.eci.cvds.tdd.library.loan.Loan.loanDate29
+
+loanDate30
+/
+)edu.eci.cvds.tdd.library.loan.Loan.status32
+
+status33
+.
+(edu.eci.cvds.tdd.library.loan.LoanStatus35
+3
+-edu.eci.cvds.tdd.library.loan.Loan.returnDate37
+
+
+returnDate38
+V
+Pedu.eci.cvds.tdd.library.loan.Loan#getBook()Ledu/eci/cvds/tdd/library/book/Book;40
+
+method41
+
+getBook42
+
+returns43
+
+
+references44
+W
+Qedu.eci.cvds.tdd.library.loan.Loan#setBook(Ledu/eci/cvds/tdd/library/book/Book;)V46
+
+setBook47
+
+	has param48
+V
+Pedu.eci.cvds.tdd.library.loan.Loan#getUser()Ledu/eci/cvds/tdd/library/user/User;50
+
+getUser51
+W
+Qedu.eci.cvds.tdd.library.loan.Loan#setUser(Ledu/eci/cvds/tdd/library/user/User;)V53
+
+setUser54
+O
+Iedu.eci.cvds.tdd.library.loan.Loan#getLoanDate()Ljava/time/LocalDateTime;56
+
+getLoanDate57
+P
+Jedu.eci.cvds.tdd.library.loan.Loan#setLoanDate(Ljava/time/LocalDateTime;)V59
+
+setLoanDate60
+^
+Xedu.eci.cvds.tdd.library.loan.Loan#getStatus()Ledu/eci/cvds/tdd/library/loan/LoanStatus;62
+
+	getStatus63
+_
+Yedu.eci.cvds.tdd.library.loan.Loan#setStatus(Ledu/eci/cvds/tdd/library/loan/LoanStatus;)V65
+
+	setStatus66
+Q
+Kedu.eci.cvds.tdd.library.loan.Loan#getReturnDate()Ljava/time/LocalDateTime;68
+
+getReturnDate69
+R
+Ledu.eci.cvds.tdd.library.loan.Loan#setReturnDate(Ljava/time/LocalDateTime;)V71
+
+setReturnDate72J
+
+1
+12Z
+
+3	
+354j’
+9
+64
+678 *
+1 (:3B
+	
+9
+10
+
+
+11
+12
+@
+28:
+282916 *
+1 (26:3B
+	
+9
+17
+
+
+11
+30
+@
+39:
+394041 *
+1 (26:3B
+	
+9
+10
+
+
+11
+42
+
+19
+192021
+@
+23:
+232416 *
+1 (26:3B
+	
+9
+17
+
+
+11
+25
+@
+55:
+555641 *
+16 6(26:3B
+	
+9
+10
+
+
+11
+57
+@
+58:
+585941 *
+1> >(26:3B
+	
+9
+10
+
+
+11
+60
+
+34
+343521
+@
+64:
+646541 *
+1M M(26:3B
+	
+9
+10
+
+
+11
+66
+@
+67:
+676841 *
+1T T(26:3B
+	
+9
+10
+
+
+11
+69
+@
+49:
+495041 *
+1' '(26:3B
+	
+9
+10
+
+
+11
+51
+@
+61:
+616241 *
+1E E(26:3B
+	
+9
+10
+
+
+11
+63
+@
+45:
+454641 *
+1   (26:3B
+	
+9
+10
+
+
+11
+47
+@
+52:
+525341 *
+1/ /(26:3B
+	
+9
+10
+
+
+11
+54
+@
+36:
+363716 *
+1 (26:3B
+	
+9
+17
+
+
+11
+38
+@
+31:
+313216 *
+1 (26:3B
+	
+9
+17
+
+
+11
+33
+@
+14:
+141516 *
+1 (26:3B
+	
+9
+17
+
+
+11
+18
+
+26
+262721
+@
+70:
+707141 *
+1\ \(26:3B
+	
+9
+10
+
+
+11
+72r’
+
+
+6613*
+1 (
+
+141922*
+1 (
+
+141913*
+1 (
+
+141913*
+1 (
+
+232622*
+1 (
+
+232613*
+1 (
+
+232613*
+1 (
+
+313422*
+1 (
+
+313413*
+1 (
+
+313413*
+1 (
+
+391943*
+1 (
+
+391913*
+1 (
+
+391913*
+1 (
+
+391444*
+1 (
+
+451948*
+1   (
+
+451922*
+1   ("
+
+451913*
+1   (
+
+45613*
+1!	 !(
+
+45644*
+1!	 !(
+
+451913*
+1! !(
+
+451444*
+1! !(
+
+492643*
+1' '(
+
+492613*
+1' '(
+
+492613*
+1( ((
+
+492344*
+1( ((
+
+522648*
+1/ /(
+
+522622*
+1/ /("
+
+522613*
+1/ /(
+
+52613*
+10	 0(
+
+52644*
+10	 0(
+
+522613*
+10 0(
+
+522344*
+10 0(
+
+552844*
+17 7(
+
+58613*
+1?	 ?(
+
+58644*
+1?	 ?(
+
+582844*
+1? ?(
+
+613443*
+1E E(
+
+613413*
+1E E(
+
+613413*
+1F F(
+
+613144*
+1F F(
+
+643448*
+1M M(%
+
+643422*
+1M& M(,
+
+643413*
+1M M(%
+
+64613*
+1N	 N(
+
+64644*
+1N	 N(
+
+643413*
+1N N(
+
+643144*
+1N N(
+
+673644*
+1U U(
+
+70613*
+1]	 ](
+
+70644*
+1]	 ](
+
+703644*
+1] ](

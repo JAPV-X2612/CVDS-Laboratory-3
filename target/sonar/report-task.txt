@@ -1,0 +1,7 @@
+organization=japv-x2612
+projectKey=JAPV-X2612:CVDS-Laboratory-3
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.59516
+dashboardUrl=https://sonarcloud.io/dashboard?id=JAPV-X2612%3ACVDS-Laboratory-3
+ceTaskId=AZTu9LozkJ9M2Gz74oMk
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZTu9LozkJ9M2Gz74oMk

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Book.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CVDS-Laboratory-3</a> &gt; <a href="index.source.html" class="el_package">edu.eci.cvds.tdd.library.book</a> &gt; <span class="el_source">Book.java</span></div><h1>Book.java</h1><pre class="source lang-java linenums">package edu.eci.cvds.tdd.library.book;
+/**
+ * Represents a book with a title, author, and ISBN.
+ * 
+ * @author: Mayerlly Suárez, Jesús Pinzón &amp; José Castillo
+ * @version 1.1 (2024/02/05)
+ */
+public class Book {
+    private final String tittle;
+    private final String author;
+    private final String isbn;
+
+    /**
+     * Constructs a Book instance with the specified title, author, and ISBN.
+     * 
+     * @param tittle The title of the book.
+     * @param author The author of the book.
+     * @param isbn The ISBN of the book.
+     */
+<span class="fc" id="L20">    public Book(String tittle, String author, String isbn) {</span>
+<span class="fc" id="L21">        this.tittle = tittle;</span>
+<span class="fc" id="L22">        this.author = author;</span>
+<span class="fc" id="L23">        this.isbn = isbn;</span>
+<span class="fc" id="L24">    }</span>
+
+    /**
+     * Returns the title of the book.
+     * @return The title of the book.
+     */
+    public String getTittle() {
+<span class="fc" id="L31">        return tittle;</span>
+    }
+
+    /**
+     * Returns the author of the book.
+     * @return The author of the book.
+     */
+    public String getAuthor() {
+<span class="fc" id="L39">        return author;</span>
+    }
+    /**
+     * Returns the ISBN of the book.
+     * @return The ISBN of the book.
+     */
+    public String getIsbn() {
+<span class="fc" id="L46">        return isbn;</span>
+    }
+
+    /**
+     * Compares this book to another object. Two books are considered equal if they have the same ISBN.
+     * 
+     * @param obj The object to compare this book with.
+     * @return true if the books are the same (i.e., have the same ISBN), false otherwise.
+     * @throws ClassCastException If the object is not an instance of Book.
+     */
+    @Override
+    public boolean equals(Object obj) {
+<span class="fc bfc" id="L58" title="All 2 branches covered.">        if (this == obj) {</span>
+<span class="fc" id="L59">            return true; // If both objects are the same</span>
+        }
+<span class="fc bfc" id="L61" title="All 4 branches covered.">        if (obj == null || getClass() != obj.getClass()) {</span>
+<span class="fc" id="L62">            return false; // If the object is null or not of the same class</span>
+        }
+<span class="fc" id="L64">        Book otherBook = (Book) obj;</span>
+<span class="fc bfc" id="L65" title="All 4 branches covered.">        return isbn != null &amp;&amp; isbn.equals(otherBook.isbn); // Safe comparison of ISBN</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

@@ -1,0 +1,36 @@
+
+1__sonar_lambda_0$edu.eci.cvds.tdd.library.LibraryR
+HF:/CVDS-Laboratory-3/src/main/java/edu/eci/cvds/tdd/library/Library.java@ @(5"startingBlock*Æ
+startingBlock@ @(5ç
+ä
+
+__unknown_file (
+userIdjava.lang.String"__id*L
+
+__unknown_file (0*."
+ edu.eci.cvds.tdd.library.Library"
+userId*
+1*π
+1@ @(≥∞
+@ @(&
+%3java.lang.String"<edu.eci.cvds.tdd.library.user.User#getId()Ljava/lang/String;*E
+
+__unknown_file ()
+'
+u"edu.eci.cvds.tdd.library.user.User2getId()÷”
+@ @(5
+%4boolean",java.lang.String#equals(Ljava/lang/Object;)Z*4
+
+__unknown_file (
+
+%3java.lang.String*8
+
+__unknown_file (
+
+userIdjava.lang.String2equals(Ljava/lang/Object;)"
+@ @(5
+
+%4boolean:3
+@ @('
+u"edu.eci.cvds.tdd.library.user.UserB 
+java.util.function.Predicate

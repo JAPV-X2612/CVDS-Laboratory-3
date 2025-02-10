@@ -1,0 +1,116 @@
+
+1.0JAPV-X2612:CVDS-Laboratory-3JavaFrontend"1739175793246*java2.Bß
+@
+;src/main/java/edu/eci/cvds/tdd/library/loan/LoanStatus.java2
+
+package4
+"
+edu.eci.cvds.tdd.library.loan5
+-
+(edu.eci.cvds.tdd.library.loan.LoanStatus7
+	
+enum8
+
+access9
+
+public10
+
+simple name11
+
+
+LoanStatus12
+b
+\edu.eci.cvds.tdd.library.loan.LoanStatus#values()[Ledu/eci/cvds/tdd/library/loan/LoanStatus;14
+
+method15
+
+values16
+t
+nedu.eci.cvds.tdd.library.loan.LoanStatus#valueOf(Ljava/lang/String;)Ledu/eci/cvds/tdd/library/loan/LoanStatus;18
+
+valueOf19
+
+
+uses20
+5
+/edu.eci.cvds.tdd.library.loan.LoanStatus.ACTIVE22
+
+field23
+
+ACTIVE24
+
+calls25
+7
+1edu.eci.cvds.tdd.library.loan.LoanStatus.RETURNED27
+
+RETURNED28J
+
+1
+12Z
+
+3	
+354jó
+5
+26/
+262723 *
+1 (26:3B
+
+
+11
+28
+5
+17/
+171815 *
+1	 	(26:3B
+
+
+11
+19
+5
+13/
+131415 *
+1	 	(26:3B
+
+
+11
+16
+9
+64
+678 *
+1	 	(:3B
+	
+9
+10
+
+
+11
+12
+5
+21/
+212223 *
+1
+ 
+(26:3B
+
+
+11
+24rÅ
+
+6620*
+1	 	(
+
+21625*
+1
+ 
+(
+
+21625*
+1
+ 
+(
+
+26625*
+1 (
+
+26625*
+1 (

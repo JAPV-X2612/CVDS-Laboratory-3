@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data flavor="com.sonarsource.architecture.export.java" version="1.0.0" site="https://www.sonarsource.com/">
+  <modules>
+    <module id="566740890" type="file" name="src/main/java/edu/eci/cvds/tdd/library/user/User.java" fat="9">
+      <submodule id="1045633896" type="class" name="User" fat="8">
+        <submodule id="-944268047" type="field" name="name" fat="1" />
+        <submodule id="-711591419" type="method" name="User" fat="1" />
+        <submodule id="-1386896159" type="field" name="id" fat="1" />
+        <submodule id="-395299206" type="method" name="getName" fat="1" />
+        <submodule id="205858422" type="method" name="setId" fat="1" />
+        <submodule id="-1578442042" type="method" name="setName" fat="1" />
+        <submodule id="-132503094" type="method" name="getId" fat="1" />
+      </submodule>
+    </module>
+    <module id="-1662346712" type="file" name="src/main/java/edu/eci/cvds/tdd/library/loan/LoanStatus.java" fat="6">
+      <submodule id="-354892989" type="enum" name="LoanStatus" fat="5">
+        <submodule id="-731192884" type="method" name="valueOf" fat="1" />
+        <submodule id="1560585480" type="field" name="ACTIVE" fat="1" />
+        <submodule id="-823423931" type="method" name="values" fat="1" />
+        <submodule id="-854836513" type="field" name="RETURNED" fat="1" />
+      </submodule>
+    </module>
+    <module id="1647303802" type="file" name="src/main/java/edu/eci/cvds/tdd/library/loan/Loan.java" fat="17">
+      <submodule id="1892196424" type="class" name="Loan" fat="16">
+        <submodule id="1594063569" type="field" name="user" fat="1" />
+        <submodule id="-2103953463" type="method" name="setLoanDate" fat="1" />
+        <submodule id="-892068435" type="method" name="getBook" fat="1" />
+        <submodule id="1774930773" type="method" name="getLoanDate" fat="1" />
+        <submodule id="-346308535" type="method" name="setReturnDate" fat="1" />
+        <submodule id="181824580" type="method" name="getStatus" fat="1" />
+        <submodule id="534474378" type="field" name="status" fat="1" />
+        <submodule id="-1015615885" type="field" name="book" fat="1" />
+        <submodule id="-1454907825" type="method" name="getUser" fat="1" />
+        <submodule id="-2113009219" type="method" name="setBook" fat="1" />
+        <submodule id="-5308459" type="method" name="getReturnDate" fat="1" />
+        <submodule id="-1892054018" type="field" name="returnDate" fat="1" />
+        <submodule id="172624603" type="method" name="setUser" fat="1" />
+        <submodule id="1607869630" type="field" name="loanDate" fat="1" />
+        <submodule id="216517282" type="method" name="setStatus" fat="1" />
+      </submodule>
+    </module>
+    <module id="-211018534" type="file" name="src/main/java/edu/eci/cvds/tdd/library/book/Book.java" fat="10">
+      <submodule id="1609830568" type="class" name="Book" fat="9">
+        <submodule id="-1964485105" type="method" name="Book" fat="1" />
+        <submodule id="2059090810" type="method" name="getAuthor" fat="1" />
+        <submodule id="-296960732" type="method" name="equals" fat="1" />
+        <submodule id="1553202726" type="field" name="isbn" fat="1" />
+        <submodule id="-1521007131" type="method" name="getIsbn" fat="1" />
+        <submodule id="-1308387279" type="field" name="author" fat="1" />
+        <submodule id="-812360675" type="method" name="getTittle" fat="1" />
+        <submodule id="1966602158" type="field" name="tittle" fat="1" />
+      </submodule>
+    </module>
+    <module id="794854254" type="file" name="src/main/java/edu/eci/cvds/tdd/library/Library.java" fat="10">
+      <submodule id="353545883" type="class" name="Library" fat="9">
+        <submodule id="1142560289" type="field" name="books" fat="1" />
+        <submodule id="1184471221" type="method" name="addBook" fat="1" />
+        <submodule id="-824862253" type="method" name="addUser" fat="1" />
+        <submodule id="-1564431650" type="method" name="Library" fat="1" />
+        <submodule id="-1084571928" type="field" name="loans" fat="1" />
+        <submodule id="717750785" type="method" name="loanABook" fat="1" />
+        <submodule id="1909199240" type="method" name="returnLoan" fat="1" />
+        <submodule id="438244739" type="field" name="users" fat="1" />
+      </submodule>
+    </module>
+  </modules>
+  <dependencies>
+    <dependency from="-711591419" to="1045633896" type="calls" />
+    <dependency from="-711591419" to="-944268047" type="references" />
+    <dependency from="-711591419" to="-1386896159" type="references" />
+    <dependency from="-395299206" to="-944268047" type="references" />
+    <dependency from="205858422" to="1045633896" type="uses" />
+    <dependency from="205858422" to="-1386896159" type="references" />
+    <dependency from="-1578442042" to="1045633896" type="uses" />
+    <dependency from="-1578442042" to="-944268047" type="references" />
+    <dependency from="-132503094" to="-1386896159" type="references" />
+    <dependency from="1560585480" to="-354892989" type="calls" />
+    <dependency from="-854836513" to="-354892989" type="calls" />
+    <dependency from="1594063569" to="1045633896" type="is type" />
+    <dependency from="-2103953463" to="1892196424" type="uses" />
+    <dependency from="-2103953463" to="1607869630" type="references" />
+    <dependency from="-892068435" to="1609830568" type="returns" />
+    <dependency from="-892068435" to="-1015615885" type="references" />
+    <dependency from="1774930773" to="1607869630" type="references" />
+    <dependency from="-346308535" to="1892196424" type="uses" />
+    <dependency from="-346308535" to="-1892054018" type="references" />
+    <dependency from="181824580" to="-354892989" type="returns" />
+    <dependency from="181824580" to="534474378" type="references" />
+    <dependency from="534474378" to="-354892989" type="is type" />
+    <dependency from="-1015615885" to="1609830568" type="is type" />
+    <dependency from="-1454907825" to="1045633896" type="returns" />
+    <dependency from="-1454907825" to="1594063569" type="references" />
+    <dependency from="-2113009219" to="1609830568" type="has param" />
+    <dependency from="-2113009219" to="1892196424" type="uses" />
+    <dependency from="-2113009219" to="-1015615885" type="references" />
+    <dependency from="-5308459" to="-1892054018" type="references" />
+    <dependency from="172624603" to="1045633896" type="has param" />
+    <dependency from="172624603" to="1892196424" type="uses" />
+    <dependency from="172624603" to="1594063569" type="references" />
+    <dependency from="216517282" to="-354892989" type="has param" />
+    <dependency from="216517282" to="1892196424" type="uses" />
+    <dependency from="216517282" to="534474378" type="references" />
+    <dependency from="-1964485105" to="1609830568" type="calls" />
+    <dependency from="-1964485105" to="1966602158" type="references" />
+    <dependency from="-1964485105" to="-1308387279" type="references" />
+    <dependency from="-1964485105" to="1553202726" type="references" />
+    <dependency from="2059090810" to="-1308387279" type="references" />
+    <dependency from="-296960732" to="1609830568" type="uses" />
+    <dependency from="-296960732" to="1553202726" type="references" />
+    <dependency from="-1521007131" to="1553202726" type="references" />
+    <dependency from="-812360675" to="1966602158" type="references" />
+    <dependency from="1142560289" to="1609830568" type="uses" />
+    <dependency from="1184471221" to="1609830568" type="has param" />
+    <dependency from="1184471221" to="1142560289" type="references" />
+    <dependency from="-824862253" to="1045633896" type="has param" />
+    <dependency from="-824862253" to="438244739" type="references" />
+    <dependency from="-1564431650" to="353545883" type="calls" />
+    <dependency from="-1564431650" to="438244739" type="references" />
+    <dependency from="-1564431650" to="1142560289" type="references" />
+    <dependency from="-1564431650" to="-1084571928" type="references" />
+    <dependency from="-1084571928" to="1892196424" type="uses" />
+    <dependency from="717750785" to="1892196424" type="returns" />
+    <dependency from="717750785" to="1045633896" type="is type" />
+    <dependency from="717750785" to="438244739" type="references" />
+    <dependency from="717750785" to="-132503094" type="calls" />
+    <dependency from="717750785" to="1609830568" type="is type" />
+    <dependency from="717750785" to="1142560289" type="references" />
+    <dependency from="717750785" to="-1521007131" type="calls" />
+    <dependency from="717750785" to="-1084571928" type="references" />
+    <dependency from="717750785" to="-1454907825" type="calls" />
+    <dependency from="717750785" to="-892068435" type="calls" />
+    <dependency from="717750785" to="-354892989" type="returns" />
+    <dependency from="717750785" to="181824580" type="calls" />
+    <dependency from="717750785" to="1560585480" type="references" />
+    <dependency from="717750785" to="-2113009219" type="calls" />
+    <dependency from="717750785" to="172624603" type="calls" />
+    <dependency from="717750785" to="-2103953463" type="calls" />
+    <dependency from="717750785" to="216517282" type="calls" />
+    <dependency from="1909199240" to="1892196424" type="returns" />
+    <dependency from="1909199240" to="-1084571928" type="references" />
+    <dependency from="1909199240" to="1142560289" type="references" />
+    <dependency from="1909199240" to="1609830568" type="returns" />
+    <dependency from="1909199240" to="-892068435" type="calls" />
+    <dependency from="1909199240" to="216517282" type="calls" />
+    <dependency from="1909199240" to="-354892989" type="uses" />
+    <dependency from="1909199240" to="-854836513" type="references" />
+    <dependency from="1909199240" to="-346308535" type="calls" />
+    <dependency from="438244739" to="1045633896" type="uses" />
+  </dependencies>
+</data>

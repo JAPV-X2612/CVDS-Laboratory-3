@@ -1,0 +1,16 @@
+
+Iedu.eci.cvds.tdd.library.loan.Loan#getLoanDate()Ljava/time/LocalDateTime;T
+JF:/CVDS-Laboratory-3/src/main/java/edu/eci/cvds/tdd/library/loan/Loan.java6 6($"1*¡
+17 7(Ñ
+Å
+7 7(
+%0java.time.LocalDateTime"__id*P
+
+__unknown_file (4*2$
+"edu.eci.cvds.tdd.library.loan.Loan"
+
+loanDate"+
+7 7(
+
+%0java.time.LocalDateTimeB&$
+"edu.eci.cvds.tdd.library.loan.LoanH

@@ -1,0 +1,142 @@
+
+>edu.eci.cvds.tdd.library.book.Book#equals(Ljava/lang/Object;)ZT
+JF:/CVDS-Laboratory-3/src/main/java/edu/eci/cvds/tdd/library/book/Book.java9 9("startingBlock*è
+2A A(#x
+v
+A A(#
+%7java.lang.String"__id*L
+
+__unknown_file (0*.$
+"edu.eci.cvds.tdd.library.book.Book"
+isbn„
+
+A+ A(9
+%8java.lang.String"__id*W
+
+__unknown_file (;*9
+/
+	otherBook"edu.eci.cvds.tdd.library.book.Book"
+isbnÒÏ
+A A(:
+%9boolean",java.lang.String#equals(Ljava/lang/Object;)Z*4
+
+__unknown_file (
+
+%7java.lang.String*4
+
+__unknown_file (
+
+%8java.lang.String2equals(Ljava/lang/Object;)*
+1*
+3@  @(#z
+x
+@ @($/
+	otherBook"edu.eci.cvds.tdd.library.book.Book"__id*5
+
+__unknown_file (
+
+objjava.lang.Objectx
+v
+A A(
+%5java.lang.String"__id*L
+
+__unknown_file (0*.$
+"edu.eci.cvds.tdd.library.book.Book"
+isbnt
+r
+A A(
+%6boolean"	__compare*
+A A(
+!=*$
+A A(
+
+%5java.lang.String*
+A A(
+""*
+2
+1*†
+startingBlock9 9(%‹
+ˆ
+8 8(
+%10"
+__annotate*2
+
+__unknown_file (
+java.lang.Override*5
+
+__unknown_file (
+
+objjava.lang.ObjectX
+V
+9! 9($
+objjava.lang.Object"__annotation*#
+
+__unknown_file (
+
+%10*
+8*!
+4> >("
+> >(
+""*Ú
+5= =(#¢Ÿ
+= =(%
+%2java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*B
+
+__unknown_file (&$
+"edu.eci.cvds.tdd.library.book.Book2
+getClass()•’
+=) =(7
+%3java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*5
+
+__unknown_file (
+
+objjava.lang.Object2
+getClass()…
+‚
+= =(7
+%4boolean"	__compare*
+=& =((
+!=*#
+= =(%
+
+%2java.lang.Class*#
+=) =(7
+
+%3java.lang.Class*
+3
+4*Œ
+6= =(u
+s
+= =(
+%1boolean"	__compare*
+= =(
+==*%
+= =(
+
+objjava.lang.Object*
+= =(
+""*
+4
+5*!
+7; ;("
+; ;(
+""*®
+8: :(–
+“
+: :(
+%0boolean"	__compare*
+: :(
+==*2
+: :(&$
+"edu.eci.cvds.tdd.library.book.Book*%
+: :(
+
+objjava.lang.Object*
+6
+7*!
+1A A(;"
+A A(;
+"":#
+9 9($
+objjava.lang.ObjectB&$
+"edu.eci.cvds.tdd.library.book.BookHX

@@ -1,7 +1,3 @@
-# === Archivos de Compilación ===
-target/
-*.class
-
 # === Configuración de Maven ===
 
 Patterns/

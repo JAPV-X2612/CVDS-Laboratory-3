@@ -1,0 +1,150 @@
+
+uedu.eci.cvds.tdd.library.Library#returnLoan(Ledu/eci/cvds/tdd/library/loan/Loan;)Ledu/eci/cvds/tdd/library/loan/Loan;R
+HF:/CVDS-Laboratory-3/src/main/java/edu/eci/cvds/tdd/library/Library.javay y("5*“
+2z z(_
+]
+z z('
+l"edu.eci.cvds.tdd.library.loan.Loan"__id*"
+
+__unknown_file (
+""š
+—
+z z('
+l"edu.eci.cvds.tdd.library.loan.Loan"
+__arrayGet*2
+
+__unknown_file (
+
+%0java.util.List*"
+
+__unknown_file (
+""*
+4
+1*Ê
+3| |(t
+r
+| |(
+%2java.util.Map"__id*K
+
+__unknown_file (/*-"
+ edu.eci.cvds.tdd.library.Library"
+booksÛØ
+| |(%(
+%3"edu.eci.cvds.tdd.library.book.Book"Pedu.eci.cvds.tdd.library.loan.Loan#getBook()Ledu/eci/cvds/tdd/library/book/Book;*E
+
+__unknown_file ()
+'
+l"edu.eci.cvds.tdd.library.loan.Loan2	getBook()t
+r
+|' |(,
+%4java.util.Map"__id*K
+
+__unknown_file (/*-"
+ edu.eci.cvds.tdd.library.Library"
+booksÛØ
+|1 |(<(
+%5"edu.eci.cvds.tdd.library.book.Book"Pedu.eci.cvds.tdd.library.loan.Loan#getBook()Ledu/eci/cvds/tdd/library/book/Book;*E
+
+__unknown_file ()
+'
+l"edu.eci.cvds.tdd.library.loan.Loan2	getBook()«
+¨
+|' |(=
+%6java.lang.Integer"__mapGet*1
+
+__unknown_file (
+
+%4java.util.Map*F
+
+__unknown_file (*
+(
+%5"edu.eci.cvds.tdd.library.book.Bookp
+n
+|' |(A	
+%7int"__calculate*
+|> |(?
++*%
+|' |(=
+
+%6java.lang.Integer*
+|@ |(A2Ô
+Ñ
+| |(B
+%8java.lang.Integer"__mapSet*1
+
+__unknown_file (
+
+%2java.util.Map*F
+
+__unknown_file (*
+(
+%3"edu.eci.cvds.tdd.library.book.Book*'
+
+__unknown_file (
+	
+%7intf
+d
+} }(/.
+%9(edu.eci.cvds.tdd.library.loan.LoanStatus"__id*"
+
+__unknown_file (
+""Á¾
+} }(0
+%10void"Yedu.eci.cvds.tdd.library.loan.Loan#setStatus(Ledu/eci/cvds/tdd/library/loan/LoanStatus;)V*E
+
+__unknown_file ()
+'
+l"edu.eci.cvds.tdd.library.loan.Loan*L
+
+__unknown_file (0
+.
+%9(edu.eci.cvds.tdd.library.loan.LoanStatus25setStatus(Ledu/eci/cvds/tdd/library/loan/LoanStatus;)ž
+›
+~  ~(3
+%11java.time.LocalDateTime"6java.time.LocalDateTime#now()Ljava/time/LocalDateTime;*7
+
+__unknown_file ("
+java.time.LocalDateTime—”
+~ ~(4
+%12void"Ledu.eci.cvds.tdd.library.loan.Loan#setReturnDate(Ljava/time/LocalDateTime;)V*E
+
+__unknown_file ()
+'
+l"edu.eci.cvds.tdd.library.loan.Loan*<
+
+__unknown_file ( 
+
+%11java.time.LocalDateTime2(setReturnDate(Ljava/time/LocalDateTime;)"5
+ ()
+'
+l"edu.eci.cvds.tdd.library.loan.Loan*
+4{ {(÷ô
+{ {(
+%1boolean",java.lang.Object#equals(Ljava/lang/Object;)Z*E
+
+__unknown_file ()
+'
+l"edu.eci.cvds.tdd.library.loan.Loan*H
+
+__unknown_file (,
+*
+loan"edu.eci.cvds.tdd.library.loan.Loan2equals(Ljava/lang/Object;)*
+2
+3*‰
+5z z(u
+s
+z z(
+%0java.util.List"__id*K
+
+__unknown_file (/*-"
+ edu.eci.cvds.tdd.library.Library"
+loans*
+2*%
+1
+‚ ‚("
+
+‚ ‚(
+"":6
+y y($*
+loan"edu.eci.cvds.tdd.library.loan.LoanB$"
+ edu.eci.cvds.tdd.library.LibraryH

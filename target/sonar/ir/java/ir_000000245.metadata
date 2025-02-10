@@ -1,0 +1,5 @@
+edu.eci.cvds.tdd.library.book.Book#equals(Ljava/lang/Object;)Z
+false
+d54d4959f3e7a528e2c67eb26e81b345
+java.lang.Object#getClass()Ljava/lang/Class;
+java.lang.String#equals(Ljava/lang/Object;)Z

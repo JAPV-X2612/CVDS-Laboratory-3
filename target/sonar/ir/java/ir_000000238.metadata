@@ -1,0 +1,11 @@
+edu.eci.cvds.tdd.library.Library#returnLoan(Ledu/eci/cvds/tdd/library/loan/Loan;)Ledu/eci/cvds/tdd/library/loan/Loan;
+false
+f2c90a01169851626c8b434d65a52f1c
+java.time.LocalDateTime#now()Ljava/time/LocalDateTime;
+==
+equals java.lang.Object#equals(Ljava/lang/Object;)Z
+get java.util.Map#get(Ljava/lang/Object;)Ljava/lang/Object;
+getBook edu.eci.cvds.tdd.library.loan.Loan#getBook()Ledu/eci/cvds/tdd/library/book/Book;
+put java.util.Map#put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+setReturnDate edu.eci.cvds.tdd.library.loan.Loan#setReturnDate(Ljava/time/LocalDateTime;)V
+setStatus edu.eci.cvds.tdd.library.loan.Loan#setStatus(Ledu/eci/cvds/tdd/library/loan/LoanStatus;)V
